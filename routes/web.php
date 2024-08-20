@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\HomeController;
 
 Route::middleware(['auth'])->prefix('admin')->group(function(){
     Route::get('/', function () {
@@ -13,7 +14,11 @@ Route::middleware(['auth'])->prefix('admin')->group(function(){
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/post/{post:slug}', [App\Http\Controllers\HomeController::class, 'post'])->name('home.post');
-Route::get('/about', [App\Http\Controllers\HomeController::class, 'about'])->name('home.about');
-Route::get('/contact', [App\Http\Controllers\HomeController::class, 'contact'])->name('home.contact');
+Route::controller(HomeController::class)->group(function(){
+    Route::get('/home','index')->name('home');
+    Route::get('/post/{post:slug}', 'post')->name('home.post');
+    Route::get('/about','about')->name('home.about');
+    Route::get('/contact','contact')->name('home.contact');
+});
+
+
