@@ -62,8 +62,10 @@
                 </div>
             </div>
             <div class="sb-sidenav-footer">
+                @if(Auth::check())
                 <div class="small">Logged in as:</div>
-                Start Bootstrap
+                {{Auth::user()->name}}
+                @endif
             </div>
         </nav>
     </div>

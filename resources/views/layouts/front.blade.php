@@ -71,7 +71,7 @@
 </nav>
 
 <!-- Page Header -->
-<header class="masthead">
+<header class="masthead" style="background-image: url({{$mastHeadPhoto}})">
     <div class="overlay"></div>
     <div class="container">
         <div class="row">

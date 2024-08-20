@@ -5,7 +5,7 @@
         @if($posts->count())
             @foreach($posts as $post)
                 <div class="post-preview">
-                    <a href="{{route('home.post',$post->id)}}">
+                    <a href="{{route('home.post',$post->slug)}}">
                         <h2 class="post-title">
                             {{$post->title}}
                         </h2>

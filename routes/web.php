@@ -14,6 +14,6 @@ Route::middleware(['auth'])->prefix('admin')->group(function(){
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/post/{post}', [App\Http\Controllers\HomeController::class, 'post'])->name('home.post');
+Route::get('/post/{post:slug}', [App\Http\Controllers\HomeController::class, 'post'])->name('home.post');
 Route::get('/about', [App\Http\Controllers\HomeController::class, 'about'])->name('home.about');
 Route::get('/contact', [App\Http\Controllers\HomeController::class, 'contact'])->name('home.contact');

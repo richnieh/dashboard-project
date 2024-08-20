@@ -27,10 +27,16 @@ class HomeController extends Controller
         $posts = Post::with('comments','user')->paginate(10);
         return view('home', compact('posts'));
     }
-    public function post(Request $request)
+    public function post(Request $request, Post $post)
     {
-        return view('post');
+        return view('post', compact('post'));
     }
+
+//    public function post(Request $request, $slug)
+//    {
+//        $post = Post::with('comments', 'user')->whereSlug($slug)->firstOrFail();
+//        return view('post', compact('post'));
+//    }
 
     public function about(Request $request)
     {
