@@ -48,12 +48,12 @@
                             class="nav-link"
                             href="#">Logout</a>
                     </li>
-                    <form action="{{route('logout')}}" method="post" id="form-logout">
+                    <form action="{{route('custom.logout')}}" method="post" id="form-logout">
                         @csrf
                     </form>
                 @else
                     <li class="nav-item">
-                        <a class="nav-link" href="/login">Login</a>
+                        <a class="nav-link" href="{{route('custom.login')}}">Login</a>
                     </li>
                 @endif
                 <li class="nav-item">

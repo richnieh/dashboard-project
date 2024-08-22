@@ -25,7 +25,7 @@
                         class="dropdown-item"
                         href="#">Logout</a>
                 </li>
-                <form action="{{route('logout')}}" method="post" id="form-logout">
+                <form action="{{route('custom.logout')}}" method="post" id="form-logout">
                     @csrf
                 </form>
             </ul>
